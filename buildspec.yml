@@ -11,8 +11,9 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - mvn package
+      - mv target/mkyong.war mkyong.war
 artifacts:
   files:
-    - target/mkyong.war
-    - appspec.yml
-  discard-paths: yes
+    - mkyong.war
+    - .ebextensions/**/*
